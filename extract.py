@@ -10,10 +10,13 @@ f_name=os.path.splitext(os.path.basename("p000001.psv"))[0]
 data_collection = pd.read_csv("p000001.psv",sep='|',index_col=None, header=0)                 #cantains all file name
 data_collection['hours']=data_collection.index                                              #adding hours coloumn
 data_collection['identifier']=f_name 
-data_collection=((data_collection[].isna.sum())/data_collection.shape[])*100
-print(data_collection)
+num=(data_collection.isna().sum()/data_collection.shape[0])*100
+df=DataFrame(num)
 
- 
+
+
+#print(data_collection)
+'''
 for filename in all_files:  
     if filename!="p000001.psv":                                                #loop over the filenames
         data = pd.read_csv(filename,sep='|',index_col=None, header=0)
@@ -25,4 +28,4 @@ for filename in all_files:
 print( data_collection)
 
 
-#data=df.fillna(0)
+#data=df.fillna(0)'''
