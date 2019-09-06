@@ -21,8 +21,14 @@ for filename in all_files:
         data['hours']=data.index
         data['identifier']=f_name  
         data_collection = data_collection.append(data)
-new=data_collection.copy()  
-new.loc['NAN_VALUE'] = (new.isna().sum()/new.shape[0])*100   
+new=list( (data_collection.isna().sum()/data_collection.shape[0])*100)
+col_list=list(data_collection.columns)
+for i in range(len(new)):
+    if new[i]>40:
+        del data_collection[col_list[i]]
+        
+#new=data_collection.copy()  
+  
 
 #        else:
 #            continue
