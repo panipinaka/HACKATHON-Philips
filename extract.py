@@ -10,22 +10,27 @@ f_name=os.path.splitext(os.path.basename("p000001.psv"))[0]
 data_collection = pd.read_csv("p000001.psv",sep='|',index_col=None, header=0)                 #cantains all file name
 data_collection['hours']=data_collection.index                                              #adding hours coloumn
 data_collection['identifier']=f_name 
-num=(data_collection.isna().sum()/data_collection.shape[0])*100
-df=DataFrame(num)
-
-
-
+##data_collection.loc['NAN_VALUE'] =(data_collection.isna().sum()/data_collection.shape[0])*100
 #print(data_collection)
-'''
+
 for filename in all_files:  
     if filename!="p000001.psv":                                                #loop over the filenames
         data = pd.read_csv(filename,sep='|',index_col=None, header=0)
         f_name=os.path.splitext(os.path.basename(filename))[0]                 #filename without extintion file
         data['hours']=data.index                                              #adding hours coloumn
         data['identifier']=f_name  
-                                                    #adding identifier coloumn
-        data_collection = data_collection.append(data) 
-print( data_collection)
+        data_collection = data_collection.append(data)
+new=data_collection.copy()  
+new.loc['NAN_VALUE'] = (new.isna().sum()/new.shape[0])*100   
 
-
-#data=df.fillna(0)'''
+#        else:
+#            continue
+#        #num=(data_collection.isna().sum()/data_collection.shape[0])*100
+#        #data_collection = data_collection.append(num) 
+#        #value:data_collection.loc['num']= (data_collection.isna().sum()/data_collection.shape[0])*100
+#       # data_collection.loc['mean'] = data_collection.mean()
+#        #print(data_collection[data_collection["value"]<40])
+#
+#
+#
+##data=df.fillna(0)'''
