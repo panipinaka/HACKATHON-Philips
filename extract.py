@@ -33,5 +33,5 @@ new.loc['NAN_VALUE'] = (new.isna().sum()/new.shape[0])*100
 #        #print(data_collection[data_collection["value"]<40])
 #
 #
-#
+#dfdfdfd
 ##data=df.fillna(0)'''
