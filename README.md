@@ -6,6 +6,9 @@ The machine is trained with 100 dataset out of 20000 dataset, and the developmen
 
 ## By - Geeky Coders
 Ajith.K.J
+
 Anagha Shamprasad
+
 Pinaka Pani
+
 Mohammed Shaheel
